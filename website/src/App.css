@@ -1,0 +1,109 @@
+
+/* main page */
+.landing {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* use the provided background image */
+  background-image: url('./assets/mainbg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.landing-inner {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 96px 6vw;
+  box-sizing: border-box;
+}
+
+.left {
+  position: relative;
+  flex: 1 1 auto;
+  text-align: left;
+}
+
+.title {
+  font-size: 72px;
+  margin: 0 0 10px 0;
+  color: #f2eef6;
+  font-weight: 700;
+  letter-spacing: -2px;
+}
+
+.heart {
+  position: absolute;
+  left: 370px;
+  top: -110px;
+  width: 150px;
+  height: auto;
+  pointer-events: none;
+}
+
+.subtitle {
+  margin-top: 40px;
+  color: rgba(242,238,246,0.9);
+  font-size: 18px;
+}
+
+.enter {
+  margin-top: 20px;
+  background: linear-gradient(180deg, #7b4aa2 0%, #4b2259 100%);
+  color: #efe9f4;
+  padding: 14px 28px;
+  border-radius: 28px;
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 8px 18px rgba(72,20,84,0.45), inset 0 -6px 10px rgba(0,0,0,0.15);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.enter:active {
+  transform: translateY(1px);
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.pfp-wrap {
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  border: 4px solid rgba(255,255,255,0.9);
+}
+
+.pfp {
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .landing-inner {
+    flex-direction: column;
+    padding: 48px 24px;
+    gap: 36px;
+    align-items: center;
+  }
+  .left { text-align: center; }
+  .heart { left: 50%; transform: translateX(40%); top: 4px; }
+  .title { font-size: 48px; }
+  .pfp-wrap { width: 220px; height: 220px; }
+}
