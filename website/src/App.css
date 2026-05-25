@@ -12,6 +12,75 @@
   position: relative;
 }
 
+.landing-loading .left,
+.landing-loading .right,
+.landing-loading .heart,
+.landing-loading .subtitle,
+.landing-loading .pfp-wrap,
+.landing-loading .enter {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.landing-entered .left,
+.landing-entered .title,
+.landing-entered .right,
+.landing-entered .heart,
+.landing-entered .subtitle,
+.landing-entered .pfp,
+.landing-entered .enter {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.landing-entered .left {
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.landing-entered .left {
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.landing-entered .heart {
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.landing-entered .subtitle {
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+.landing-entered .enter {
+  transition: opacity 2.5s ease, transform 2.5s ease;
+}
+
+.landing-entered .pfp-wrap {
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+.landing-entered .pfp {
+  transition: opacity 2.5s ease, transform 2.5s ease;
+}
+
+.landing-loading .left {
+  transition: none;
+}
+
+.landing-loading .heart,
+.landing-loading .subtitle,
+.landing-loading .enter {
+  transition: none;
+}
+
+.landing-exiting .left,
+.landing-exiting .right,
+.landing-exiting .heart,
+.landing-exiting .subtitle,
+.landing-exiting .enter {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
 .landing-inner {
   width: 100%;
   max-width: 100%;
@@ -127,6 +196,185 @@
   flex-wrap: wrap;
   width: 100%;
   max-width: 1100px;
+}
+
+.page2-loading .page2-inner,
+.page2-loading .back,
+.page2-loading .page2-button {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: none;
+}
+
+.page2-entered .page2-inner,
+.page2-entered .back,
+.page2-entered .page2-button {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page2-entered .page2-inner {
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.page2-entered .back {
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.page2-entered .page2-button:nth-of-type(1) {
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+.page2-entered .page2-button:nth-of-type(2) {
+  transition: opacity 2.5s ease, transform 2.5s ease;
+}
+
+.page2-entered .page2-button:nth-of-type(3) {
+  transition: opacity 3s ease, transform 3s ease;
+}
+
+.page2-exiting .page2-inner,
+.page2-exiting .back,
+.page2-exiting .page2-button {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.about-loading .about-grid,
+.about-loading .back,
+.about-loading .about-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: none;
+}
+
+.about-entered .about-grid,
+.about-entered .back,
+.about-entered .about-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-entered .about-grid {
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.about-entered .back {
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.about-entered .about-card:nth-of-type(1) {
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+.about-entered .about-card:nth-of-type(2) {
+  transition: opacity 2.5s ease, transform 2.5s ease;
+}
+
+.about-entered .about-card:nth-of-type(3) {
+  transition: opacity 3s ease, transform 3s ease;
+}
+
+.about-exiting .about-grid,
+.about-exiting .back,
+.about-exiting .about-card {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.skills-loading .skills-grid,
+.skills-loading .back,
+.skills-loading .skills-note,
+.skills-loading .skills-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: none;
+}
+
+.skills-entered .skills-grid,
+.skills-entered .back,
+.skills-entered .skills-note,
+.skills-entered .skills-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skills-entered .skills-grid {
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+
+.skills-entered .back {
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.skills-entered .skills-card:nth-of-type(1) {
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+.skills-entered .skills-card:nth-of-type(2) {
+  transition: opacity 2.5s ease, transform 2.5s ease;
+}
+
+.skills-entered .skills-card:nth-of-type(3) {
+  transition: opacity 3s ease, transform 3s ease;
+}
+
+.skills-entered .skills-note {
+  transition: opacity 5s ease, transform 5s ease;
+}
+
+.skills-exiting .skills-grid,
+.skills-exiting .back,
+.skills-exiting .skills-note,
+.skills-exiting .skills-card {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.contacts-loading .contacts-inner,
+.contacts-loading .back,
+.contacts-loading .contacts-copy,
+.contacts-loading .contact-panel {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: none;
+}
+
+.contacts-entered .contacts-inner,
+.contacts-entered .back,
+.contacts-entered .contacts-copy,
+.contacts-entered .contact-panel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contacts-entered .contacts-inner {
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.contacts-entered .back {
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.contacts-entered .contacts-copy {
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+.contacts-entered .contact-panel {
+  transition: opacity 2.5s ease, transform 2.5s ease;
+}
+
+.contacts-exiting .contacts-inner,
+.contacts-exiting .back,
+.contacts-exiting .contacts-copy,
+.contacts-exiting .contact-panel {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
 }
 
 .page2-button, .back {

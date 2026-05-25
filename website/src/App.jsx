@@ -1,25 +1,110 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import heart from './assets/heart.png'
 import pfp from './assets/pfp.png'
 
 function App() {
   const [page, setPage] = useState('home')
+  const [landingLoaded, setLandingLoaded] = useState(false)
+  const [landingExiting, setLandingExiting] = useState(false)
+  const [page2Loaded, setPage2Loaded] = useState(false)
+  const [page2Exiting, setPage2Exiting] = useState(false)
+  const [aboutLoaded, setAboutLoaded] = useState(false)
+  const [aboutExiting, setAboutExiting] = useState(false)
+  const [skillsLoaded, setSkillsLoaded] = useState(false)
+  const [skillsExiting, setSkillsExiting] = useState(false)
+  const [contactsLoaded, setContactsLoaded] = useState(false)
+  const [contactsExiting, setContactsExiting] = useState(false)
+  const PAGE_TRANSITION_DELAY = 450
+  const PAGE_LOADED_DELAY = 50
+
+  useEffect(() => {
+    setLandingLoaded(false)
+    setPage2Loaded(false)
+    setAboutLoaded(false)
+    setSkillsLoaded(false)
+    setContactsLoaded(false)
+
+    const timer = window.setTimeout(() => {
+      if (page === 'home') {
+        setLandingLoaded(true)
+      } else if (page === 'page2') {
+        setPage2Loaded(true)
+      } else if (page === 'about') {
+        setAboutLoaded(true)
+      } else if (page === 'skills') {
+        setSkillsLoaded(true)
+      } else if (page === 'contacts') {
+        setContactsLoaded(true)
+      }
+    }, PAGE_LOADED_DELAY)
+
+    return () => window.clearTimeout(timer)
+  }, [page])
+
+  const handleEnterClick = () => {
+    setLandingExiting(true)
+    window.setTimeout(() => {
+      setPage('page2')
+      setLandingExiting(false)
+    }, PAGE_TRANSITION_DELAY)
+  }
+
+  const goToPageFromPage2 = (target) => {
+    setPage2Exiting(true)
+    window.setTimeout(() => {
+      setPage(target)
+      setPage2Exiting(false)
+    }, PAGE_TRANSITION_DELAY)
+  }
+
+  const goAbout = () => goToPageFromPage2('about')
+  const goSkills = () => goToPageFromPage2('skills')
+  const goContacts = () => goToPageFromPage2('contacts')
+
+  const goHome = () => {
+    setPage2Exiting(true)
+    window.setTimeout(() => {
+      setPage('home')
+      setPage2Exiting(false)
+    }, PAGE_TRANSITION_DELAY)
+  }
+
+  const goBackToPage2 = () => {
+    if (page === 'about') setAboutExiting(true)
+    if (page === 'skills') setSkillsExiting(true)
+    if (page === 'contacts') setContactsExiting(true)
+
+    window.setTimeout(() => {
+      setPage('page2')
+      setAboutExiting(false)
+      setSkillsExiting(false)
+      setContactsExiting(false)
+    }, PAGE_TRANSITION_DELAY)
+  }
+
+  const goPage2 = () => {
+    setPage2Exiting(true)
+    window.setTimeout(() => {
+      setPage('page2')
+      setPage2Exiting(false)
+    }, PAGE_TRANSITION_DELAY)
+  }
 
   if (page === 'page2') {
     return (
-      <main className="page2">
-        <button type="button" className="back" onClick={() => setPage('home')}>
+      <main className={`page2 ${page2Loaded ? 'page2-entered' : 'page2-loading'} ${page2Exiting ? 'page2-exiting' : ''}`}>
+        <button type="button" className="back" onClick={goHome}>
           back
         </button>
         <div className="page2-inner">
-          <button type="button" className="page2-button" onClick={() => setPage('about')}>
+          <button type="button" className="page2-button" onClick={goAbout}>
             about me
           </button>
-          <button type="button" className="page2-button" onClick={() => setPage('skills')}>
+          <button type="button" className="page2-button" onClick={goSkills}>
             skills n stuff
           </button>
-          <button type="button" className="page2-button" onClick={() => setPage('contacts')}>
+          <button type="button" className="page2-button" onClick={goContacts}>
             contacts
           </button>
         </div>
@@ -43,8 +128,8 @@ function App() {
 
   if (page === 'skills') {
     return (
-      <main className="skills">
-        <button type="button" className="back" onClick={() => setPage('page2')}>
+      <main className={`skills ${skillsLoaded ? 'skills-entered' : 'skills-loading'} ${skillsExiting ? 'skills-exiting' : ''}`}>
+        <button type="button" className="back" onClick={goBackToPage2}>
           back
         </button>
         <div className="skills-grid">
@@ -78,8 +163,8 @@ function App() {
 
   if (page === 'contacts') {
     return (
-      <main className="contacts">
-        <button type="button" className="back" onClick={() => setPage('page2')}>
+      <main className={`contacts ${contactsLoaded ? 'contacts-entered' : 'contacts-loading'} ${contactsExiting ? 'contacts-exiting' : ''}`}>
+        <button type="button" className="back" onClick={goBackToPage2}>
           back
         </button>
         <div className="contacts-inner">
@@ -142,8 +227,8 @@ function App() {
 
   if (page === 'about') {
     return (
-      <main className="about">
-        <button type="button" className="back" onClick={() => setPage('page2')}>
+      <main className={`about ${aboutLoaded ? 'about-entered' : 'about-loading'} ${aboutExiting ? 'about-exiting' : ''}`}>
+        <button type="button" className="back" onClick={goBackToPage2}>
           back
         </button>
         <div className="about-grid">
@@ -187,13 +272,13 @@ function App() {
   }
 
   return (
-    <main className="landing">
+    <main className={`landing ${landingLoaded ? 'landing-entered' : 'landing-loading'} ${landingExiting ? 'landing-exiting' : ''}`}>
       <div className="landing-inner">
         <div className="left">
           <h1 className="title">ngoye diop.</h1>
           <img src={heart} alt="heart" className="heart" />
           <p className="subtitle">my life condensed into a website!</p>
-          <button type="button" className="enter" onClick={() => setPage('page2')}>
+          <button type="button" className="enter" onClick={handleEnterClick}>
             enter my world
           </button>
         </div>
