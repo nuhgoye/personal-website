@@ -177,6 +177,281 @@
   transform: translateY(-1px);
 }
 
+/* about me page */ 
+.about {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('./assets/aboutmebg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.about-grid {
+  width: min(1200px, 100%);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 30px;
+  padding: 96px 6vw;
+  box-sizing: border-box;
+}
+
+.about-card {
+  background: rgba(19, 7, 49, 0.84);
+  border: 2px solid rgba(0, 0, 0, 0.18);
+  border-radius: 28px;
+  padding: 36px 30px;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.28);
+  color: #f4f0ff;
+  backdrop-filter: blur(12px);
+}
+
+.about-card h2 {
+  margin: 0 0 12px;
+  font-size: 22px;
+  text-transform: lowercase;
+  letter-spacing: 0;
+  color: #fff;
+}
+
+.about-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.84);
+  line-height: 1.6;
+  font-size: 15px;
+  white-space: pre-wrap;
+}
+
+/* skills page */
+.skills {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('./assets/skillsbg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.skills-grid {
+  width: min(1200px, 100%);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 30px;
+  padding: 96px 6vw 24px;
+  box-sizing: border-box;
+}
+
+.skills-card {
+  background: rgba(19, 7, 49, 0.84);
+  border: 2px solid rgba(0, 0, 0, 0.18);
+  border-radius: 28px;
+  padding: 36px 30px;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.28);
+  color: #f4f0ff;
+  backdrop-filter: blur(12px);
+}
+
+.skills-card h2 {
+  margin: 0 0 12px;
+  font-size: 22px;
+  text-transform: lowercase;
+  letter-spacing: 0;
+  color: #fff;
+}
+
+.skills-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.84);
+  line-height: 1.6;
+  font-size: 15px;
+  white-space: pre-wrap;
+}
+
+.skills-card p + p {
+  margin-top: 18px;
+}
+
+.skills-note {
+  margin: 10px 0 48px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+/* contacts page */
+.contacts {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('./assets/contactsbg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.contacts-inner {
+  width: min(1200px, 100%);
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(320px, 1fr);
+  gap: 40px;
+  padding: 96px 6vw;
+  box-sizing: border-box;
+  align-items: start;
+}
+
+.contacts-copy {
+  color: #f6f2ff;
+}
+
+.contacts-copy h1 {
+  margin: 0 0 18px;
+  font-size: clamp(36px, 4vw, 48px);
+  line-height: 1.02;
+}
+
+.contacts-copy p {
+  margin: 0 0 20px;
+  color: rgba(246, 242, 255, 0.9);
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 620px;
+}
+
+.contact-links {
+  display: grid;
+  gap: 1px;
+  justify-items: left;
+  text-align: left;
+}
+
+.contact-link {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.contact-link strong {
+  display: inline-block;
+  color: #ffffff;
+  font-size: 15px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.contact-link-content {
+  display: grid;
+  gap: 1px;
+}
+
+.contact-link a {
+  color: rgba(246, 242, 255, 0.95);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-link-subtext {
+  margin: 0;
+  color: rgba(246, 242, 255, 0.74);
+  font-size: 14px;
+  max-width: 420px;
+}
+
+.contact-link a:hover {
+  color: #d6c3ff;
+}
+
+.contact-panel {
+  background: rgba(245, 245, 248, 0.94);
+  border-radius: 30px;
+  padding: 36px 32px;
+  box-shadow: 0 30px 60px rgba(4, 3, 18, 0.26);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.contact-panel h2 {
+  margin: 0 0 20px;
+  font-size: 22px;
+  color: #1a1234;
+}
+
+.contact-field {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: 0;
+  border: 1px solid rgba(91, 70, 170, 0.55);
+  background: rgba(255, 255, 255, 0.95);
+  color: #1a1234;
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-size: 15px;
+  margin-bottom: 18px;
+  box-sizing: border-box;
+}
+
+.contact-field:focus {
+  border-color: rgba(115, 97, 205, 0.85);
+}
+
+.contact-textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.contact-submit {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: 0;
+  border: 0;
+  border-radius: 14px;
+  background: #28143d;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 16px 0;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.contact-submit:hover {
+  transform: translateY(-1px);
+  background: #3f1d6a;
+}
+
+@media (max-width: 1100px) {
+  .about-grid {
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+  }
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+  }
+  .contacts-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 780px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    padding: 48px 24px;
+    gap: 24px;
+  }
+}
+
 @media (max-width: 1024px) {
   .landing-inner {
     flex-direction: column;
